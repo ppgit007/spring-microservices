@@ -30,11 +30,26 @@ now hitting http://localhost:8100/currency-converter/from/USD/to/INR/quantity/10
    instead of using the complete rest template and response entity code. 
    
    
-                      *****************Lesson no 87********************
-*************************Setting up client side load balancing with Ribbon*************************
+                      *****************Lesson no 87/88********************
+*************************Setting up & running client side load balancing with Ribbon*************************
 ==================================================================================================
+1. When CurrencyExchangeService has multiple instances and CurrencyConversionService has single instance and we want
+   to distribute the load among different instances of CurrencyExchangeService we use client side load balance "Ribbon".
+   
+2. Ribbon makes use of feign configuration and helps us distribute the load between different instance of 
+   CurrencyExchangeService
+   
+3. Add new dependency in pom.xml file and enable ribbon on proxy. using ribbon clint we don't need to use the hard 
+   coded url, as we configure urls saperately in application.properties using property 
+   currency-exchange-service.ribbon.listOfServers=http://localhost:8000,http://localhost:8001
+   
+4. Now launch two insances of CurrencyExchangeService and then call the feign url of currency-converter the load is 
+   going to different port every time
 
 
+					  *****************Lesson no 90/91/92/93********************
+*************************Understanding all about naming server "Eureka"*************************
+==================================================================================================
 
 
 
