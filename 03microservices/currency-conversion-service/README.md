@@ -50,6 +50,31 @@ now hitting http://localhost:8100/currency-converter/from/USD/to/INR/quantity/10
 					  *****************Lesson no 90/91/92/93********************
 *************************Understanding all about naming server "Eureka"*************************
 ==================================================================================================
+1. All the instances of all the microservices would register themselves with Naming Server whenever they comes up
+
+2. Service Discovery: 
+   If "CurrencyCalculationServices" wants to talk to "CurrencyExchangeService" then it would talk to "EurekaNamingServer"
+   to see what are all the instances of "CurrencyExchangeService" that are currently running
+   
+3. Two imp features of the naming server: 
+   a) Service Registration:
+   		At the startup of every application they would register with Naming Server
+   b) Service Discovery
+   		Whenever the details of another microservices is required, there is service discovery
+   		
+4. Setting up Eureka Naming Server 
+   a) Creating a component for EurekaNamingServer
+   b) Updating the CurrencyCalculationService to connect to EurekaNamingServer
+   c) Connecting CurrenceExchangeService also to talk to the EurekaNamingServer
+   b) Configuring Ribbon to find the details from EurekaNamingServer
+
+
+
+
+
+
+
+
 
 
 
