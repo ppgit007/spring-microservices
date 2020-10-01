@@ -68,6 +68,15 @@ now hitting http://localhost:8100/currency-converter/from/USD/to/INR/quantity/10
    c) Connecting CurrenceExchangeService also to talk to the EurekaNamingServer
    b) Configuring Ribbon to find the details from EurekaNamingServer
 
+5. Connecting CurrencyConversionService with Eureka
+	a) adding a dependency spring-cloud-starter-netflix-eureka-client and adding annotation "EnableDiscoveryClient" in
+	main class of currencyconversionservice
+	b) now configure in application.properties the url for eureka i.e, eureka.clien.service-url.default-zone=http://localhost:8761/eureka
+	
+6. Connecting CurrencyExchangeService microservice with Eureka
+	a) Same steps as above
+	
+7. 
 
 
 
