@@ -47,7 +47,7 @@ now hitting http://localhost:8100/currency-converter/from/USD/to/INR/quantity/10
    going to different port every time
 
 
-					  *****************Lesson no 90/91/92/93********************
+					  *****************Lesson no 90/91/92/93/95********************
 *************************Understanding all about naming server "Eureka"*************************
 ==================================================================================================
 1. All the instances of all the microservices would register themselves with Naming Server whenever they comes up
@@ -76,7 +76,47 @@ now hitting http://localhost:8100/currency-converter/from/USD/to/INR/quantity/10
 6. Connecting CurrencyExchangeService microservice with Eureka
 	a) Same steps as above
 	
-7. 
+7. Execution by hitting url
+
+
+					  *****************Lesson no 98/99/100********************
+*************************Understanding all about API Gateway - Zuul*************************
+==================================================================================================
+1. There are few common features across all the microservices, eg:
+	a) Authentication, Authorization & security
+	b) Rate Limits
+	c) Fault Tolerance
+	d) Service Aggregation
+These features are implemented at the level of API Gateway.
+
+2. Instead of allowing microservices to call each other directly, we would make all the call go through a API
+   Gateway. This api gateway make sure that all the above common features are adhered to. API gateway also play
+   a great role for debugging and analytics
+   
+A) Setting up Zuul API Gateway server
+	a) in main class after extrating and importing a zuul-api-gateway-server project add two annotations
+	   @EnableZuulProxy & @EnableDiscoveryClient
+
+B) Implementing Logging in API gatway after setup. It will logg all the api coming through the gateway
+	a) We will impletement a ZuulLoggingFilter and will extend a ZuulFilter class which brings some methods to
+	   override. 
+	b) inside run() method we will write the actual logic of the filter for logging
+	
+
+
+
+
+
+
+
+
+
+   
+   
+
+
+
+
 
 
 
